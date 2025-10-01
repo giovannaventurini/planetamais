@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeta+ - Seu guia interativo de consumo consciente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <div class="text-xl font-semibold text-foreground">AquaControl</div>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#inicio" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            Início
+                        </a>
+                        <a href="#servicos" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            Serviços
+                        </a>
+                        <a href="#sobre" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            Sobre
+                        </a>
+                        <a href="#tecnologia" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            Tecnologia
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#contato" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                        Contato
+                    </a>
+                    <button class="btn-primary">
+                        Consulta
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <!-- Background with water-like gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-muted via-background to-accent/10" />
+
+        <!-- Animated water ripple effect -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-pulse" />
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-light text-foreground mb-8 text-balance">
+                Planeta+ é o futuro da
+                <br />
+                <span class="font-normal">gestão hídrica inteligente</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 text-pretty">
+                Soluções avançadas para monitoramento, controle, reaproveitamento e otimização de recursos hídricos com tecnologia de ponta.
+            </p>
+
+            <button class="btn-primary btn-lg">
+                Descobrir mais
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-muted/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-light text-foreground mb-8 text-balance">Nossos serviços principais</h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+                    Oferecemos soluções completas para gestão inteligente de água, desde monitoramento até reaproveitamento.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="text-6xl font-light text-foreground">1</div>
+                    <h3 class="text-xl font-medium text-foreground">Monitoramento em Tempo Real</h3>
+                    <p class="text-muted-foreground text-pretty">
+                        Acompanhe a qualidade e o fluxo da água em tempo real através de sensores IoT avançados e dashboards
+                        intuitivos.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="text-6xl font-light text-foreground">2</div>
+                    <h3 class="text-xl font-medium text-foreground">Análise Preditiva</h3>
+                    <p class="text-muted-foreground text-pretty">
+                        Utilize inteligência artificial para prever problemas e otimizar o uso de recursos hídricos antes que
+                        ocorram falhas.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="text-6xl font-light text-foreground">3</div>
+                    <h3 class="text-xl font-medium text-foreground">Sistemas de Reaproveitamento</h3>
+                    <p class="text-muted-foreground text-pretty">
+                        Tecnologias inovadoras para captação, tratamento e reutilização de águas pluviais e cinzas.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="text-6xl font-light text-foreground">4</div>
+                    <h3 class="text-xl font-medium text-foreground">Gestão de Qualidade</h3>
+                    <p class="text-muted-foreground text-pretty">
+                        Controle rigoroso dos parâmetros de qualidade da água em todas as etapas do processo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-light text-foreground mb-12 text-balance">
+                    Unindo inovação, sustentabilidade e eficiência
+                </h2>
+
+                <div class="relative mb-16">
+                    <div class="aspect-video bg-muted rounded-lg overflow-hidden">
+                        <img
+                            src="https://images.unsplash.com/photo-1550147760-44c9966d6bc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Instalação de tratamento de água com tecnologia moderna"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+                    A Planeta+ atua na vanguarda da transição tecnológica no setor hídrico. Desenvolvemos soluções
+                    sustentáveis que conectam tradição e inovação, criando sistemas mais eficientes e ambientalmente
+                    responsáveis para o controle e reaproveitamento de água.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="tecnologia" class="py-24 bg-muted/30">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-light text-foreground mb-8 text-balance">
+                        Tecnologia avançada para
+                        <br />
+                        um futuro sustentável
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-card rounded-lg overflow-hidden shadow-sm border border-border">
+                        <div class="aspect-square bg-muted">
+                            <img
+                                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                                alt="Sensores IoT para monitoramento de água"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-medium text-card-foreground mb-2">Sensores Inteligentes</h3>
+                            <p class="text-sm text-muted-foreground">
+                                Tecnologia IoT avançada para coleta de dados precisos sobre qualidade e fluxo da água.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-card rounded-lg overflow-hidden shadow-sm border border-border">
+                        <div class="aspect-square bg-muted">
+                            <img
+                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                alt="Dashboard de IA para gestão de água"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-medium text-card-foreground mb-2">Inteligência Artificial</h3>
+                            <p class="text-sm text-muted-foreground">
+                                Algoritmos de machine learning para análise preditiva e otimização automática.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-card rounded-lg overflow-hidden shadow-sm border border-border">
+                        <div class="aspect-square bg-muted">
+                            <img
+                                src="https://images.unsplash.com/photo-1598791318878-10e76d178023?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                alt="Sistema sustentável de tratamento de água"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-medium text-card-foreground mb-2">Reaproveitamento</h3>
+                            <p class="text-sm text-muted-foreground">
+                                Sistemas eco-friendly que transformam águas residuais em recursos valiosos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-light text-foreground mb-8 text-balance">Fale sobre seu projeto</h2>
+
+                <p class="text-lg text-muted-foreground mb-12 text-pretty">
+                    Entre em contato conosco para descobrir como podemos otimizar seus sistemas de controle e reaproveitamento de água.
+                </p>
+
+                <button class="btn-primary btn-lg">
+                    Iniciar conversa
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-primary-foreground py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-xl font-semibold mb-6">AquaControl</div>
+                    <div class="space-y-2 text-sm text-primary-foreground/80">
+                        <div>Início</div>
+                        <div>Serviços</div>
+                        <div>Sobre</div>
+                        <div>Contato</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-medium mb-6">Soluções</div>
+                    <div class="space-y-2 text-sm text-primary-foreground/80">
+                        <div>Monitoramento IoT</div>
+                        <div>Análise Preditiva</div>
+                        <div>Gestão de Qualidade</div>
+                        <div>Reaproveitamento</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-medium mb-6">Produtos</div>
+                    <div class="space-y-2 text-sm text-primary-foreground/80">
+                        <div>Sensores</div>
+                        <div>Dashboard</div>
+                        <div>Mobile App</div>
+                        <div>API</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-medium mb-6">Contato</div>
+                    <div class="space-y-2 text-sm text-primary-foreground/80">
+                        <div>contato@aquacontrol.com</div>
+                        <div>+55 11 9999-9999</div>
+                        <div>São Paulo, Brasil</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-sm text-primary-foreground/60">
+                © 2024 Planeta+. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

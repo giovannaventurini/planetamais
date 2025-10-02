@@ -15,7 +15,8 @@
         <div class="container mx-auto px-6 py-4">
             <nav class="flex items-center justify-between">
                 <div class="flex items-center space-x-8">
-                    <div class="text-xl font-semibold text-foreground">AquaControl</div>
+                    <img src="img/logo.png" width="150" alt="logoheader" class="logo">
+
                     <div class="hidden md:flex items-center space-x-6">
                         <a href="#inicio" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
                             Início
@@ -43,7 +44,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Inicio Section -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <!-- Background with water-like gradient -->
         <div class="absolute inset-0 bg-gradient-to-br from-muted via-background to-accent/10" />
@@ -71,7 +72,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Serviços Section -->
     <section id="servicos" class="py-24 bg-muted/30">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -119,7 +120,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Sobre Section -->
     <section id="sobre" class="py-24">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
@@ -145,8 +146,119 @@
             </div>
         </div>
     </section>
+<!-- Comparador de produtos -->
+    <section id="comparador" class="py-24">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-light text-foreground mb-8 text-balance">
+            Escolhas inteligentes, planeta saudável
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 text-pretty">
+            Veja como um produto sustentável se compara a um convencional ao longo do tempo. O benefício é tanto para o seu bolso quanto para o meio ambiente.
+        </p>
 
-    <!-- Technology Section -->
+        <div class="comparison-grid max-w-5xl mx-auto">
+            <div class="product-card">
+                <h3 class="text-2xl font-medium mb-4">Garrafa de Água PET</h3>
+                <i data-lucide="bottle" class="w-16 h-16 text-red-500 mx-auto mb-6"></i>
+                <ul class="comparison-list">
+                    <li><i data-lucide="x-circle" class="icon-bad"></i>Uso único, gera lixo</li>
+                    <li><i data-lucide="x-circle" class="icon-bad"></i>Custo contínuo (R$ 3 por garrafa)</li>
+                    <li><i data-lucide="x-circle" class="icon-bad"></i>Alta pegada de carbono na produção</li>
+                    <li><i data-lucide="x-circle" class="icon-bad"></i>Pode liberar microplásticos</li>
+                </ul>
+            </div>
+
+            <div class="product-card sustainable">
+                 <h3 class="text-2xl font-medium mb-4">Garrafa Reutilizável</h3>
+                 <i data-lucide="glass-water" class="w-16 h-16 text-primary mx-auto mb-6"></i>
+                 <ul class="comparison-list">
+                     <li><i data-lucide="check-circle" class="icon-good"></i>Dura anos, zero lixo</li>
+                     <li><i data-lucide="check-circle" class="icon-good"></i>Custo único (se paga em 10 usos)</li>
+                     <li><i data-lucide="check-circle" class="icon-good"></i>Reduz drasticamente a pegada de CO₂</li>
+                     <li><i data-lucide="check-circle" class="icon-good"></i>Mantém a água pura e fresca</li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Desafios Semanal -->
+<section id="desafios" class="py-24 bg-muted/50">
+    <div class="container mx-auto px-6">
+        <div class="challenge-card max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <span class="text-sm font-bold text-primary uppercase">Desafio da Semana</span>
+                    <h3 class="text-3xl font-medium text-foreground mt-2 mb-4">Semana Sem Descartáveis</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Que tal passar 7 dias sem usar copos, talheres ou canudos de plástico? Use alternativas reutilizáveis e veja a diferença que você faz!
+                    </p>
+                    <button id="participar-btn" class="btn-primary">
+                        <i data-lucide="check-circle" class="inline-block w-5 h-5 mr-2"></i>
+                        Eu Participei!
+                    </button>
+                </div>
+                <div class="text-center">
+                    <p class="font-medium mb-2">Progresso da Comunidade:</p>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <p class="mt-2">
+                        <span id="participantes-count" class="font-bold text-primary">1,428</span>
+                        <span class="text-muted-foreground">pessoas já participaram!</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Simulador -->
+    <section id="simulador" class="py-24">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-light text-foreground mb-8 text-balance">
+            Veja seu impacto na prática
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 text-pretty">
+            Use nossa calculadora para simular a economia real ao adotar práticas mais sustentáveis. Comece com um exemplo simples: a troca de lâmpadas.
+        </p>
+
+        <div class="simulator-card max-w-4xl mx-auto">
+            <div class="p-8">
+                <h3 class="text-2xl font-medium text-foreground mb-6">Simulador: Lâmpadas LED vs. Incandescentes</h3>
+                
+                <div class="mb-6 text-left">
+                    <label for="lampadas-slider" class="block font-medium mb-2">Quantas lâmpadas você quer trocar?</label>
+                    <div class="flex items-center space-x-4">
+                        <input type="range" id="lampadas-slider" min="1" max="20" value="5" class="w-full">
+                        <span id="lampadas-valor" class="text-xl font-bold text-primary w-12 text-center">5</span>
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-item">
+                        <i data-lucide="zap" class="w-10 h-10 text-yellow-500 mb-2"></i>
+                        <span id="economia-energia" class="result-value">730</span>
+                        <p class="result-label">kWh de energia economizados por ano</p>
+                    </div>
+                    <div class="result-item">
+                        <i data-lucide="brazilian-real" class="w-10 h-10 text-green-600 mb-2"></i>
+                        <span id="economia-reais" class="result-value">R$ 657</span>
+                        <p class="result-label">economizados na conta de luz por ano</p>
+                    </div>
+                    <div class="result-item">
+                        <i data-lucide="leaf" class="w-10 h-10 text-primary mb-2"></i>
+                        <span id="reducao-co2" class="result-value">65 kg</span>
+                        <p class="result-label">de CO₂ que deixam de ser emitidos</p>
+                    </div>
+                </div>
+                <p class="text-sm text-muted-foreground mt-6">*Cálculos baseados em um uso diário de 6 horas, com custo médio de R$ 0,90/kWh.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Tecnologia Section -->
     <section id="tecnologia" class="py-24 bg-muted/30">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
@@ -211,7 +323,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contato Section -->
     <section id="contato" class="py-24">
         <div class="container mx-auto px-6">
             <div class="max-w-2xl mx-auto text-center">
@@ -265,7 +377,7 @@
                 <div>
                     <div class="font-medium mb-6">Contato</div>
                     <div class="space-y-2 text-sm text-primary-foreground/80">
-                        <div>contato@aquacontrol.com</div>
+                        <div>contato@planetamais.com</div>
                         <div>+55 11 9999-9999</div>
                         <div>São Paulo, Brasil</div>
                     </div>
@@ -273,7 +385,7 @@
             </div>
 
             <div class="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-sm text-primary-foreground/60">
-                © 2024 Planeta+. Todos os direitos reservados.
+                © 2025 Planeta+. Todos os direitos reservados.
             </div>
         </div>
     </footer>

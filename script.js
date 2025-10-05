@@ -1,7 +1,7 @@
-// Funcionalidade básica para os botões
 document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('button');
     
+    // --- LÓGICA GERAL E NAVEGAÇÃO ---
+    const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
         if (button.textContent.includes('Consulta') || 
             button.textContent.includes('Descobrir mais') || 
@@ -15,18 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Adicionar classe active para o link ativo na navegação
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
-    
     window.addEventListener('scroll', function() {
         let current = '';
-        
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (pageYOffset >= (sectionTop - 200)) {
+            if (window.pageYOffset >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
         });
@@ -34,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.forEach(link => {
             link.classList.remove('text-foreground');
             link.classList.add('text-muted-foreground');
-            
             if (link.getAttribute('href').substring(1) === current) {
                 link.classList.remove('text-muted-foreground');
                 link.classList.add('text-foreground');
@@ -42,18 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Adicionar funcionalidade de menu móvel (se necessário no futuro)
-    // Esta é uma base para quando for implementar o menu mobile
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
     }
-document.addEventListener('DOMContentLoaded', function() {
-    // ... (seu código JS existente vai aqui em cima)
 
     // --- LÓGICA DO SIMULADOR DE IMPACTO ---
     const lampadasSlider = document.getElementById('lampadas-slider');
@@ -63,25 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const reducaoCO2 = document.getElementById('reducao-co2');
 
     function calcularImpacto() {
-        if (!lampadasSlider) return; // Se o elemento não existir, pare
+        if (!lampadasSlider) return;
 
         const numLampadas = parseInt(lampadasSlider.value);
-
-        // --- Constantes para o cálculo (valores aproximados) ---
-        const consumoIncandescente = 60; // watts
-        const consumoLED = 9; // watts
+        const consumoIncandescente = 60;
+        const consumoLED = 9;
         const horasPorDia = 6;
         const diasPorAno = 365;
-        const precoKWh = 0.90; // R$
-        const fatorCO2 = 0.0891; // kg de CO₂ por kWh no Brasil (pode variar)
+        const precoKWh = 0.90;
+        const fatorCO2 = 0.0891;
 
-        // --- Cálculos ---
         const economiaWatts = (consumoIncandescente - consumoLED) * numLampadas;
         const economiaKWhAno = (economiaWatts * horasPorDia * diasPorAno) / 1000;
         const economiaReaisAno = economiaKWhAno * precoKWh;
         const reducaoCO2Ano = economiaKWhAno * fatorCO2;
 
-        // --- Atualizar a UI ---
         lampadasValor.textContent = numLampadas;
         economiaEnergia.textContent = economiaKWhAno.toFixed(0);
         economiaReais.textContent = 'R$ ' + economiaReaisAno.toFixed(2).replace('.', ',');
@@ -90,10 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (lampadasSlider) {
         lampadasSlider.addEventListener('input', calcularImpacto);
-        // Calcula o valor inicial ao carregar a página
         calcularImpacto();
     }
-
 
     // --- LÓGICA DOS DESAFIOS SEMANAIS ---
     const participarBtn = document.getElementById('participar-btn');
@@ -101,33 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const participantesCount = document.getElementById('participantes-count');
     
     if (participarBtn) {
-        let participou = false; // Simples controle de estado
-        let numParticipantes = 1428; // Número inicial
+        let numParticipantes = parseInt(participantesCount.textContent.replace(',', ''));
 
         participarBtn.addEventListener('click', () => {
-            if (participou) return;
-
-            participou = true;
             numParticipantes++;
-
-            // Atualiza o contador de participantes
-            participantesCount.textContent = numParticipantes.toLocaleString('pt-BR');
-
-            // Atualiza a barra de progresso (simulação de meta de 2000)
+            participantesCount.textContent = numParticipantes.toLocaleString('en-US');
             const novaLargura = Math.min((numParticipantes / 2000) * 100, 100);
             progressBar.style.width = novaLargura + '%';
-
-            // Feedback visual para o usuário
             participarBtn.textContent = 'Obrigado por participar!';
             participarBtn.disabled = true;
-        });
+        }, { once: true }); // Adicionado { once: true } para evitar múltiplos cliques
     }
 
-    // É importante chamar createIcons() novamente se houver ícones adicionados
-    // ou se o conteúdo for gerado dinamicamente no futuro.
+    // --- INICIALIZAÇÃO DE ÍCONES (se estiver usando a biblioteca Lucide) ---
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
-});
-
 });

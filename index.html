@@ -6,54 +6,59 @@
     <title>Planeta+ - Seu guia interativo de consumo consciente</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/favicon.png" type="image/png">
-
+    <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
 <body>
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div class="container mx-auto px-6 py-4">
-            <nav class="flex items-center justify-between">
-                <div class="flex items-center space-x-8">
-                    <img src="img/logo.png" width="150" alt="logoheader" class="logo">
+    <div class="container mx-auto px-6 py-4">
+        <nav class="flex items-center justify-between">
+            <a href="#inicio"><img src="img/logo.png" width="150" alt="logoheader" class="logo"></a>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#inicio" class="text-sm text-foreground hover:text-foreground transition-colors">Início</a>
+                <a href="#servicos" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Serviços</a>
+                <a href="#sobre" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Sobre</a>
+                <a href="agua.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Calculadora de Água
+                </a>
+                <a href="dashboard.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Dashboard
+                </a>
+                <a href="#contato" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Contato
+                </a>
+                <button class="btn-primary">Consulta</button>
+            </div>
+            
+            <button id="menu-btn" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                </button>
+        </nav>
+    </div>
 
-                    <div class="hidden md:flex items-center space-x-6">
-                        <a href="#inicio" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                            Início
-                        </a>
-                        <a href="#servicos" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                            Serviços
-                        </a>
-                        <a href="#sobre" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                            Sobre
-                        </a>
-                        <a href="#tecnologia" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                            Tecnologia
-                        </a>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#contato" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                        Contato
-                    </a>
-                    <button class="btn-primary">
-                        Consulta
-                    </button>
-                </div>
-            </nav>
+    <div id="mobile-menu" class="hidden md:hidden absolute top-[77px] left-0 w-full h-screen bg-background border-t border-border">
+        <div class="container mx-auto px-6 py-8 flex flex-col space-y-6">
+            <a href="#inicio" class="text-lg text-muted-foreground hover:text-foreground">Início</a>
+            <a href="#servicos" class="text-lg text-muted-foreground hover:text-foreground">Serviços</a>
+            <a href="#sobre" class="text-lg text-muted-foreground hover:text-foreground">Sobre</a>
+            <a href="agua.html" class="text-lg text-muted-foreground hover:text-foreground">Calculadora de Água</a>
+            <a href="dashboard.html" class="text-lg text-muted-foreground hover:text-foreground">Dashboard</a>
+            <a href="#contato" class="text-lg text-muted-foreground hover:text-foreground">Contato</a>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Inicio Section -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <!-- Background with water-like gradient -->
-        <div class="absolute inset-0 bg-gradient-to-br from-muted via-background to-accent/10" />
+        <div class="absolute inset-0 bg-gradient-to-br from-muted via-background to-accent/10"></div>
 
-        <!-- Animated water ripple effect -->
         <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-pulse" />
-            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
+
 
         <div class="relative z-10 container mx-auto px-6 text-center">
             <h1 class="text-5xl md:text-7xl font-light text-foreground mb-8 text-balance">
@@ -153,32 +158,43 @@
             Escolhas inteligentes, planeta saudável
         </h2>
         <p class="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 text-pretty">
-            Veja como um produto sustentável se compara a um convencional ao longo do tempo. O benefício é tanto para o seu bolso quanto para o meio ambiente.
+            Veja como um produto sustentável se compara a um convencional. O benefício é tanto para o seu bolso quanto para o meio ambiente.
         </p>
 
-        <div class="comparison-grid max-w-5xl mx-auto">
-            <div class="product-card">
-                <h3 class="text-2xl font-medium mb-4">Garrafa de Água PET</h3>
-                <i data-lucide="bottle" class="w-16 h-16 text-red-500 mx-auto mb-6"></i>
-                <ul class="comparison-list">
-                    <li><i data-lucide="x-circle" class="icon-bad"></i>Uso único, gera lixo</li>
-                    <li><i data-lucide="x-circle" class="icon-bad"></i>Custo contínuo (R$ 3 por garrafa)</li>
-                    <li><i data-lucide="x-circle" class="icon-bad"></i>Alta pegada de carbono na produção</li>
-                    <li><i data-lucide="x-circle" class="icon-bad"></i>Pode liberar microplásticos</li>
-                </ul>
+        <div class="product-card sustainable max-w-2xl mx-auto p-8">
+            <h3 class="text-2xl font-medium mb-6">Calculadora: Garrafa PET vs. Reutilizável</h3>
+            
+            <div class="text-left space-y-4 mb-8">
+                <div>
+                    <label for="garrafas-input" class="block font-medium mb-2">Quantas garrafas PET você compra por semana?</label>
+                    <input type="number" id="garrafas-input" value="5" class="w-full">
+                </div>
+                <div>
+                    <label for="preco-pet-input" class="block font-medium mb-2">Preço médio da garrafa PET (R$):</label>
+                    <input type="number" id="preco-pet-input" value="3.00" step="0.10" class="w-full">
+                </div>
+                <div>
+                    <label for="preco-reutil-input" class="block font-medium mb-2">Custo da sua garrafa reutilizável (R$):</label>
+                    <input type="number" id="preco-reutil-input" value="30.00" step="1.00" class="w-full">
+                </div>
             </div>
 
-            <div class="product-card sustainable">
-                 <h3 class="text-2xl font-medium mb-4">Garrafa Reutilizável</h3>
-                 <i data-lucide="glass-water" class="w-16 h-16 text-primary mx-auto mb-6"></i>
-                 <ul class="comparison-list">
-                     <li><i data-lucide="check-circle" class="icon-good"></i>Dura anos, zero lixo</li>
-                     <li><i data-lucide="check-circle" class="icon-good"></i>Custo único (se paga em 10 usos)</li>
-                     <li><i data-lucide="check-circle" class="icon-good"></i>Reduz drasticamente a pegada de CO₂</li>
-                     <li><i data-lucide="check-circle" class="icon-good"></i>Mantém a água pura e fresca</li>
-                 </ul>
+            <div class="text-left space-y-3">
+                <p class="text-lg">
+                    Em um ano, você gastaria: <span id="gasto-pet" class="font-bold text-red-600">R$ 780,00</span>
+                </p>
+                <p class="text-lg">
+                    Com a reutilizável, seu gasto é: <span id="gasto-reutil" class="font-bold text-primary">R$ 30,00</span>
+                </p>
+                <p class="text-2xl font-medium text-foreground mt-4">
+                    Economia no primeiro ano: <span id="economia-total" class="font-bold text-green-600">R$ 750,00</span>
+                </p>
+                <p class="text-lg text-muted-foreground">
+                    ...e você deixaria de descartar <span id="lixo-total" class="font-bold">260</span> garrafas plásticas!
+                </p>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -345,7 +361,7 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="text-xl font-semibold mb-6">AquaControl</div>
+                    <div class="text-xl font-semibold mb-6">Planeta+</div>
                     <div class="space-y-2 text-sm text-primary-foreground/80">
                         <div>Início</div>
                         <div>Serviços</div>

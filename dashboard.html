@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Planeta+</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-muted"> <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <div class="container mx-auto px-6 py-4">
+        <nav class="flex items-center justify-between">
+            <a href="index.html"><img src="img/logo.png" width="150" alt="logoheader" class="logo"></a>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html#inicio" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Início</a>
+                <a href="index.html#servicos" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Serviços</a>
+                <a href="agua.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Calculadora de Água
+                </a>
+                <a href="dashboard.html" class="text-sm text-foreground hover:text-foreground transition-colors">Dashboard</a>
+                <a href="index.html#contato" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contato</a>
+            </div>
+            
+            <button id="menu-btn" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                </button>
+        </nav>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-[77px] left-0 w-full h-screen bg-background border-t border-border">
+        <div class="container mx-auto px-6 py-8 flex flex-col space-y-6">
+            <a href="index.html#inicio" class="text-lg text-muted-foreground hover:text-foreground">Início</a>
+            <a href="index.html#servicos" class="text-lg text-muted-foreground hover:text-foreground">Serviços</a>
+            <a href="agua.html" class="text-lg text-muted-foreground hover:text-foreground">Calculadora de Água</a>
+            <a href="dashboard.html" class="text-lg text-foreground hover:text-foreground">Dashboard</a>
+            <a href="index.html#contato" class="text-lg text-muted-foreground hover:text-foreground">Contato</a>
+        </div>
+    </div>
+</header>
+
+    <main class="pt-32 pb-24"> <section id="dashboard">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-light text-foreground mb-8 text-balance">Seu Impacto Pessoal</h1>
+                    <p class="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+                        Aqui está um resumo de todas as suas ações salvas em nosso site. Seus dados são armazenados localmente no seu navegador.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="dashboard-card">
+                        <i data-lucide="brazilian-real" class="w-12 h-12 text-green-600 mb-4"></i>
+                        <span class="text-sm text-muted-foreground">Economia Total (R$)</span>
+                        <span id="dash-economia-reais" class="dashboard-value">R$ 0,00</span>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <i data-lucide="leaf" class="w-12 h-12 text-primary mb-4"></i>
+                        <span class="text-sm text-muted-foreground">Redução de Emissões (CO₂)</span>
+                        <span id="dash-reducao-co2" class="dashboard-value">0,0 kg</span>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <i data-lucide="recycle" class="w-12 h-12 text-yellow-500 mb-4"></i>
+                        <span class="text-sm text-muted-foreground">Lixo Plástico Evitado</span>
+                        <span id="dash-lixo-evitado" class="dashboard-value">0 un.</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <i data-lucide="droplets" class="w-12 h-12 text-blue-500 mb-4"></i>
+                        <span class="text-sm text-muted-foreground">Consumo Mensal de Água</span>
+                        <span id="dash-consumo-agua" class="dashboard-value">0 L</span>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+                <div class="dashboard-card mt-12 p-8"> <div class="grid md:grid-cols-3 gap-8">
+                        
+                        <div class="md:col-span-1">
+                            <h3 class="text-xl font-medium text-foreground mb-4">Check-in de Consumo</h3>
+                            <p class="text-sm text-muted-foreground mb-6">Adicione sua conta de luz ou água todo mês para ver seu progresso.</p>
+                            
+                            <form id="checkin-form" class="space-y-4 text-left">
+                                <div>
+                                    <label for="checkin-tipo" class="block text-sm font-medium mb-1">Tipo de Consumo</label>
+                                    <select id="checkin-tipo" class="w-full p-2 border border-border rounded-md">
+                                        <option value="energia">Energia (kWh)</option>
+                                        <option value="agua">Água (m³)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="checkin-mes" class="block text-sm font-medium mb-1">Mês</label>
+                                    <select id="checkin-mes" class="w-full p-2 border border-border rounded-md">
+                                        <option value="Jan">Janeiro</option>
+                                        <option value="Fev">Fevereiro</option>
+                                        <option value="Mar">Março</option>
+                                        <option value="Abr">Abril</option>
+                                        <option value="Mai">Maio</option>
+                                        <option value="Jun">Junho</option>
+                                        <option value="Jul">Julho</option>
+                                        <option value="Ago">Agosto</option>
+                                        <option value="Set">Setembro</option>
+                                        <option value="Out">Outubro</option>
+                                        <option value="Nov">Novembro</option>
+                                        <option value="Dez">Dezembro</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="checkin-valor" class="block text-sm font-medium mb-1">Valor (da fatura)</label>
+                                    <input type="text" inputmode="decimal" id="checkin-valor" class="w-full" placeholder="Ex: 150">
+                                </div>
+                                <button type="submit" class="btn-primary w-full py-3">Salvar Registro</button>
+                            </form>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-medium text-foreground">Histórico de Consumo</h3>
+                                <select id="chart-view-select" class="p-2 border border-border rounded-md text-sm">
+                                    <option value="energia">Ver Energia (kWh)</option>
+                                    <option value="agua">Ver Água (m³)</option>
+                                </select>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="consumoChart"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+        </section>
+    </main>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground py-16">
+        <div class="container mx-auto px-6">
+            <div class="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-sm text-primary-foreground/60">
+                © 2025 Planeta+. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializa os ícones do Lucide nesta página
+        lucide.createIcons();
+    </script>
+</body>
+</html>

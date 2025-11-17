@@ -26,7 +26,12 @@
             </div>
             
             <button id="menu-btn" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                </button>
+                <div class="space-y-1.5">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+            </button>
         </nav>
     </div>
 
@@ -75,9 +80,46 @@
                     </div>
                 </div>
             </div>
+            <div class="content-card mt-8">
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center" style="margin-bottom: 1vw;">
+                    
+                    <div>
+                        <h3 class="text-xl font-medium text-foreground mb-4">A Minha Meta Atual</h3>
+                        <p id="meta-texto" class="text-muted-foreground mb-4">Defina um objetivo para começar!</p>
+                        
+                        <div class="progress-bar-container">
+                            <div id="meta-progress-bar" class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
 
+                    <div>
+                        <form id="meta-form" class="space-y-4 text-left">
+                            <div>
+                                <label for="meta-tipo" class="block text-sm font-medium mb-1">Quero focar-me em:</label>
+                                <select id="meta-tipo">
+                                    <option value="nenhuma">Nenhuma (limpar)</option>
+                                    <option value="co2">Reduzir CO₂ (kg)</option>
+                                    <option value="reais">Poupar Dinheiro (R$)</option>
+                                    <option value="lixo">Evitar Lixo (un.)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="meta-valor" class="block text-sm font-medium mb-1">O meu objetivo é:</label>
+                                <input type="text" inputmode="decimal" id="meta-valor" class="w-full" placeholder="Ex: 50">
+                            </div>
+                            <button type="submit" class="btn-primary w-full py-3">Definir Nova Meta</button>
+                        </form>
+                    </div>
+
+                </div>
+            <div class="content-card mt-8">
+                <h3 class="text-xl font-medium text-foreground mb-6 text-center">
+                    Origem do Seu Impacto Positivo
+                </h3>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="origemChart"></canvas>
+                </div>
             </div>
-
                 <div class="dashboard-card mt-12 p-8"> <div class="grid md:grid-cols-3 gap-8">
                         
                         <div class="md:col-span-1">
@@ -140,6 +182,47 @@
 
     <footer class="bg-primary text-primary-foreground py-16">
         <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-xl font-semibold mb-6">Planeta+</div>
+                    <div class="space-y-2 text-sm text-primary-foreground/80">
+                        <div>Início</div>
+                        <div>Serviços</div>
+                        <div>Sobre</div>
+                        <div>Contato</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-medium mb-6">Soluções</div>
+                    <div class="space-y-2 text-sm text-primary-foreground/80">
+                        <div>Monitoramento IoT</div>
+                        <div>Análise Preditiva</div>
+                        <div>Gestão de Qualidade</div>
+                        <div>Reaproveitamento</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-medium mb-6">Produtos</div>
+                    <div class="space-y-2 text-sm text-primary-foreground/80">
+                        <div>Sensores</div>
+                        <div>Dashboard</div>
+                        <div>Mobile App</div>
+                        <div>API</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-medium mb-6">Contato</div>
+                    <div class="space-y-2 text-sm text-primary-foreground/80">
+                        <div>contato@planetamais.com</div>
+                        <div>+55 11 9999-9999</div>
+                        <div>São Paulo, Brasil</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-sm text-primary-foreground/60">
                 © 2025 Planeta+. Todos os direitos reservados.
             </div>

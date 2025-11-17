@@ -560,6 +560,7 @@ body {
 
     .md\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        display: flex;
     }
 
     .md\:grid-cols-4 {
@@ -809,7 +810,7 @@ input[type="email"]:focus {
 
 .chart-container {
     position: relative;
-    width: 100%;
+    width: 40vw;
     height: 350px; /* Você pode ajustar essa altura */
 }
 

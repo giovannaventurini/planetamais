@@ -20,12 +20,12 @@
                 <a href="#inicio" class="text-sm text-foreground hover:text-foreground transition-colors">Início</a>
                 <a href="#servicos" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Serviços</a>
                 <a href="#sobre" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Sobre</a>
-                <a href="agua.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Calculadora de Água
-                </a>
                 <a href="dashboard.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Dashboard
-                </a>
+                        Dashboard
+                    </a>
+                    <a href="agua.html" class="text-sm text-foreground hover:text-foreground transition-colors">
+                        Calculadora de Água
+                    </a>
                 <a href="#contato" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     Contato
                 </a>
@@ -197,6 +197,14 @@
                 <p class="text-lg text-muted-foreground">
                     ...e você deixaria de descartar <span id="lixo-total" class="font-bold">260</span> garrafas plásticas!
                 </p>
+                
+                <div class="mt-6 pt-4 border-t border-border text-xs text-muted-foreground">
+                    <p class="font-semibold mb-1">Fontes dos Cálculos:</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Pegada de Carbono PET: Baseado em estudos de Ciclo de Vida (ACV) e dados da ALPLA (~150g CO₂/garrafa).</li>
+                        <li>Economia Financeira: Baseada nos valores inseridos pelo usuário vs. custo médio de mercado.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -273,7 +281,14 @@
                         <p class="result-label">de CO₂ que deixam de ser emitidos</p>
                     </div>
                 </div>
-                <p class="text-sm text-muted-foreground mt-6">*Cálculos baseados em um uso diário de 6 horas, com custo médio de R$ 0,90/kWh.</p>
+                <div class="mt-8 pt-4 border-t border-border text-left text-xs text-muted-foreground">
+                    <p class="font-semibold mb-1">Metodologia e Fontes:</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Comparação: Lâmpada Incandescente (60W) vs. LED (9W), uso diário de 6h.</li>
+                        <li>Tarifa de Energia: Estimativa média de R$ 0,90/kWh (ref. SP/MG com impostos).</li>
+                        <li>Fator de Emissão: 0,0289 kg CO₂/kWh (Fonte: MCTI/SIN 2025).</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

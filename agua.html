@@ -22,11 +22,11 @@
                     <a href="index.html#servicos" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
                         Serviços
                     </a>
-                    <a href="agua.html" class="text-sm text-foreground hover:text-foreground transition-colors">
-                        Calculadora de Água
-                    </a>
                     <a href="dashboard.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
                         Dashboard
+                    </a>
+                    <a href="agua.html" class="text-sm text-foreground hover:text-foreground transition-colors">
+                        Calculadora de Água
                     </a>
                     <a href="index.html#contato" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
                         Contato
@@ -105,43 +105,51 @@
                         </div>
 
                         <div class="bg-muted/30 p-8 rounded-lg border">
-                            <h3 class="text-xl font-medium text-foreground mb-6">Seu Consumo Mensal Estimado:</h3>
-                            
-                            <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-muted-foreground">Banho:</span>
-                                    <span id="res-banho" class="text-lg font-medium">3.600 L</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-muted-foreground">Lavar Louça:</span>
-                                    <span id="res-louca" class="text-lg font-medium">4.140 L</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-muted-foreground">Descarga:</span>
-                                    <span id="res-descarga" class="text-lg font-medium">1.080 L</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-muted-foreground">Lavar Roupa:</span>
-                                    <span id="res-maquina" class="text-lg font-medium">1.800 L</span>
-                                </div>
+    <h3 class="text-xl font-medium text-foreground mb-6">Seu Consumo Mensal Estimado:</h3>
+    
+    <div class="space-y-4">
+        <div class="flex justify-between items-center">
+            <span class="text-muted-foreground">Banho:</span>
+            <span id="res-banho" class="text-lg font-medium">3.600 L</span>
+        </div>
+        <div class="flex justify-between items-center">
+            <span class="text-muted-foreground">Lavar Louça:</span>
+            <span id="res-louca" class="text-lg font-medium">4.140 L</span>
+        </div>
+        <div class="flex justify-between items-center">
+            <span class="text-muted-foreground">Descarga:</span>
+            <span id="res-descarga" class="text-lg font-medium">1.080 L</span>
+        </div>
+        <div class="flex justify-between items-center">
+            <span class="text-muted-foreground">Lavar Roupa:</span>
+            <span id="res-maquina" class="text-lg font-medium">1.800 L</span>
+        </div>
 
-                                <hr class="border-border my-4">
+        <hr class="border-border my-4">
 
-                                <div class="text-center pt-4">
-                                    <span class="text-muted-foreground text-lg">Gasto Total por Mês</span>
-                                    <span id="res-total" class="block text-4xl font-bold text-primary mt-2">10.620 L</span>
-                                    
-                                    <p class="text-sm text-muted-foreground mt-4">
-                                        Isso equivale a <span id="res-caixas">21</span> caixas d'água de 500L!
-                                    </p>
+        <div class="text-center pt-4">
+            <span class="text-muted-foreground text-lg">Gasto Total por Mês</span>
+            <span id="res-total" class="block text-4xl font-bold text-primary mt-2">10.620 L</span>
+            
+            <p class="text-sm text-muted-foreground mt-4 mb-6">
+                Isso equivale a <span id="res-caixas">21</span> caixas d'água de 500L!
+            </p>
 
-                                    <button id="salvar-consumo-agua" class="btn-primary w-full py-3 mt-8">Salvar no Dashboard</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <button id="salvar-consumo-agua" class="btn-primary w-full py-3">Salvar no Dashboard</button>
+            
+            <div class="mt-6 pt-4 border-t border-border text-left text-xs text-muted-foreground">
+                <p class="font-semibold mb-1">Fontes de Consumo:</p>
+                <p>Baseado em dados da <strong>SABESP</strong> e <strong>DAE</strong>:</p>
+                <ul class="list-disc list-inside mt-1 space-y-1">
+                    <li>Chuveiro: 12 L/min</li>
+                    <li>Torneira: 14 L/min</li>
+                    <li>Descarga: 9 L/acionamento</li>
+                    <li>Máquina de Lavar (10kg): 135 L/ciclo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </section>
     </main>

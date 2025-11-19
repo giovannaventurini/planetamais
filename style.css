@@ -840,11 +840,32 @@ select:focus {
     box-shadow: 0 0 0 3px hsla(221, 83%, 53%, 0.15);
 }
 
-/* --- Nova Placa de Conteúdo Genérica --- */
 .content-card {
     background-color: var(--card); /* Fundo branco */
     border: 1px solid var(--border);
     border-radius: 1rem; /* 16px */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     padding: 2.5rem; /* Um padding interno generoso */
+}
+
+.text-xs {
+    font-size: 0.75rem; /* 12px - Para as notas de rodapé */
+    line-height: 1rem;
+}
+
+.list-disc {
+    list-style-type: disc;
+}
+
+.list-inside {
+    list-style-position: inside;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+/* Ajuste para garantir que a cor do texto da fonte fique suave */
+.text-muted-foreground {
+    color: var(--muted-foreground);
 }

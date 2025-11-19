@@ -4,10 +4,10 @@ let meuGraficoOrigem;
 let meuGraficoConsumo;
 
 // --- Constantes da Calculadora de Água ---
-const LITROS_MINUTO_BANHO = 12;   // Média de chuveiro
-const LITROS_MINUTO_LOUCA = 1.6;  // Torneira moderna (9.6L/min) / 6 (média)
-const LITROS_DESCARGA = 9;        // Descarga padrão
-const LITROS_MAQUINA_LAVAR = 150; // Média por ciclo
+const LITROS_MINUTO_BANHO = 12;   // Média de chuveiro elétrico (Fonte: Sabesp)
+const LITROS_MINUTO_LOUCA = 14;   // Torneira de cozinha aberta 1/2 volta a total (Fonte: Sabesp/Abrafac)
+const LITROS_DESCARGA = 9;        // Média entre válvulas antigas (12L+) e caixas acopladas (6L)
+const LITROS_MAQUINA_LAVAR = 135; // Média por ciclo de máquina de 10kg (Fonte: Sabesp/Fabricantes)
 
 // --- LÓGICA DO DASHBOARD (Widgets e Gráfico de Pizza) ---
 
@@ -112,6 +112,7 @@ function carregarDashboard() {
 }
 
 // --- LÓGICA DO SIMULADOR (Lâmpadas) ---
+// --- LÓGICA DO SIMULADOR (Lâmpadas) ---
 function calcularImpacto() {
     const lampadasSlider = document.getElementById('lampadas-slider');
     const lampadasValor = document.getElementById('lampadas-valor');
@@ -122,9 +123,15 @@ function calcularImpacto() {
     if (!lampadasSlider) return; 
 
     const numLampadas = parseInt(lampadasSlider.value);
+    // Cálculo mantido: (60W incandescente - 9W LED) * qtd * horas * dias / 1000
     const economiaKWhAno = ( (60 - 9) * numLampadas * 6 * 365 ) / 1000;
+    
+    // Custo médio mantido (R$ 0,90 é realista para SP/MG com bandeiras)
     const economiaReaisAno = economiaKWhAno * 0.90;
-    const reducaoCO2Ano = economiaKWhAno * 0.0891;
+
+    // CORREÇÃO: Fator de emissão do SIN (Sistema Interligado Nacional) para 2025 (MCTI)
+    // Valor oficial: 0,0289 kg CO2 por kWh
+    const reducaoCO2Ano = economiaKWhAno * 0.0289; 
 
     lampadasValor.textContent = numLampadas;
     economiaEnergia.textContent = economiaKWhAno.toFixed(0);
@@ -137,13 +144,10 @@ function calcularImpacto() {
 }
 
 // --- LÓGICA DO COMPARADOR (Garrafas) ---
+// --- LÓGICA DO COMPARADOR (Garrafas) ---
 function calcularImpactoProdutos() {
     const garrafasInput = document.getElementById('garrafas-input');
-    const precoPetInput = document.getElementById('preco-pet-input');
-    const precoReutilInput = document.getElementById('preco-reutil-input');
-    const gastoPetEl = document.getElementById('gasto-pet');
-    const gastoReutilEl = document.getElementById('gasto-reutil');
-    const economiaTotalEl = document.getElementById('economia-total');
+    // ... (restante das declarações de variáveis continua igual) ...
     const lixoTotalEl = document.getElementById('lixo-total');
 
     if (!garrafasInput) return;
@@ -156,9 +160,10 @@ function calcularImpactoProdutos() {
     const gastoPetAno = garrafasPorAno * precoPet;
     const economiaAno = gastoPetAno - precoReutil;
     
-    // CÁLCULO DE CO2 ATUALIZADO (baseado em 2,64g/mês)
-    const CO2_POR_GARRAFA_ANO = 0.03168; 
-    const reducaoCO2 = garrafasPorAno * CO2_POR_GARRAFA_ANO;
+    // Pegada de carbono estimada para produção de 1 garrafa PET de 500ml
+    // Valor médio de estudos de Ciclo de Vida (ACV): ~0,150 kg (150g) de CO2 por garrafa
+    const CO2_POR_GARRAFA = 0.150; 
+    const reducaoCO2 = garrafasPorAno * CO2_POR_GARRAFA;
 
     if (isNaN(gastoPetAno) || isNaN(precoReutil) || isNaN(economiaAno) || isNaN(garrafasPorAno)) return;
     
